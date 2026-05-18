@@ -20,8 +20,8 @@ const Calculadora = {
    * @returns {number}
    */
   soma: function(a, b) {
-        return a + b;
-},
+    return a+b;
+  },
 
   /**
    * feat/operacao-subtracao
