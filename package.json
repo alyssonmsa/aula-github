@@ -1,0 +1,12 @@
+{
+  "name": "calculadora-lab-github",
+  "version": "1.0.0",
+  "description": "Lab prático de Git e GitHub — Engenharia e Qualidade de Software",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}

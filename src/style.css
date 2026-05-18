@@ -1,0 +1,51 @@
+/* style.css — Estilos base */
+/* Frente 1: estenda este arquivo com seus estilos */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a2e;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.calc-container {
+  background: #16213e;
+  border-radius: 16px;
+  padding: 24px;
+  width: 320px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.calc-display {
+  background: #0f3460;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.calc-expression {
+  font-size: 14px;
+  color: #8892b0;
+  min-height: 20px;
+}
+
+.calc-result {
+  font-size: 36px;
+  color: #ccd6f6;
+  font-weight: 300;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
