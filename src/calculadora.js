@@ -20,7 +20,8 @@ const Calculadora = {
    * @returns {number}
    */
   soma: function(a, b) {
-    throw new Error('Não implementado: feat/operacao-soma');
+    return a+b
+    //throw new Error('Não implementado: feat/operacao-soma');
   },
 
   /**
@@ -31,7 +32,8 @@ const Calculadora = {
    * @returns {number}
    */
   subtracao: function(a, b) {
-    throw new Error('Não implementado: feat/operacao-subtracao');
+    return a-b
+   // throw new Error('Não implementado: feat/operacao-subtracao');
   },
 
   /**
@@ -42,7 +44,7 @@ const Calculadora = {
    * @returns {number}
    */
   multiplicacao: function(a, b) {
-    throw new Error('Não implementado: feat/operacao-multiplicacao');
+    return a*b
   },
 
   /**
@@ -54,7 +56,8 @@ const Calculadora = {
    * @returns {number}
    */
   divisao: function(a, b) {
-    throw new Error('Não implementado: feat/operacao-divisao');
+    return a/b
+    //throw new Error('Não implementado: feat/operacao-divisao');
   },
 
   /**
@@ -65,7 +68,8 @@ const Calculadora = {
    * @returns {number}
    */
   porcentagem: function(a) {
-    throw new Error('Não implementado: feat/porcentagem');
+    return (a/100)
+    //throw new Error('Não implementado: feat/porcentagem');
   },
 
   /**
