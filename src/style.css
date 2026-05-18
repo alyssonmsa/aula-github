@@ -3,7 +3,6 @@
    Frente 1: estenda este arquivo para suas features
    ============================================================ */
 
-/* ── Reset & base ─────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -11,29 +10,20 @@
 }
 
 :root {
-  --bg-page:     #000000;
-  --bg-calc:     #1c1c1e;
-  --bg-num:      #333335;
-  --bg-fn:       #636366;
-  --bg-op:       #ff9f0a;
-  --bg-op-hover: #ffb340;
-  --bg-num-hover:#3a3a3c;
-  --bg-fn-hover: #737376;
-
-  --text-primary:   #f2f2f7;
-  --text-secondary: #aeaeb2;
-  --text-op:        #1c1c1e;
-  --text-error:     #ff453a;
-
-  --display-bg:  #1c1c1e;
+  --bg-page:       #000000;
+  --bg-calc:       #1c1c1e;
+  --bg-num:        #333335;
+  --bg-fn:         #636366;
+  --bg-op:         #ff9f0a;
+  --bg-op-hover:   #ffb340;
+  --bg-num-hover:  #3a3a3c;
+  --bg-fn-hover:   #737376;
+  --text-primary:  #f2f2f7;
+  --text-secondary:#aeaeb2;
+  --text-op:       #1c1c1e;
+  --text-error:    #ff453a;
   --border-subtle: rgba(255,255,255,0.08);
-
-  --radius-calc: 20px;
-  --radius-btn:  50%;
-  --btn-size:    72px;
-  --gap:         10px;
-
-  --transition: 80ms ease;
+  --transition:    80ms ease;
 }
 
 body {
@@ -42,28 +32,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* ── Layout ────────────────────────────────────────────────── */
+/* ── Layout ─────────────────────────────────────────────── */
 .calc-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
   padding: 24px 16px;
 }
 
 .calc {
   width: 320px;
   background: var(--bg-calc);
-  border-radius: var(--radius-calc);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.8);
 }
 
-/* ── Visor ──────────────────────────────────────────────────
-   feat/display-visor: personalize esta seção              */
+/* ── Visor ───────────────────────────────────────────────
+   feat/display-visor: personalize esta seção            */
 .calc-display {
   padding: 20px 22px 14px;
   min-height: 130px;
@@ -72,7 +60,7 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
   gap: 4px;
-  border-bottom: 0.5px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .calc-expr {
@@ -80,7 +68,6 @@ body {
   color: var(--text-secondary);
   min-height: 20px;
   word-break: break-all;
-  transition: opacity var(--transition);
 }
 
 .calc-result {
@@ -97,53 +84,31 @@ body {
 .calc-result.result-xs { font-size: 22px; }
 .calc-result.is-error  { color: var(--text-error); }
 
-/* ── Histórico ──────────────────────────────────────────────
-   feat/historico-lista: personalize esta seção            */
-.calc-history {
-  display: none; /* ativado pela feat/historico-lista */
-  border-bottom: 0.5px solid var(--border-subtle);
-}
+/* ── Histórico ───────────────────────────────────────────
+   feat/historico-lista: ative com classe .active        */
+.calc-history { display: none; border-bottom: 1px solid var(--border-subtle); }
+.calc-history.active { display: block; padding: 8px 0; max-height: 120px; overflow-y: auto; }
+#history-list { list-style: none; }
+#history-list li { display: flex; justify-content: space-between; padding: 5px 20px; font-size: 14px; color: var(--text-secondary); }
+#history-list li .hist-result { color: var(--text-primary); }
 
-.calc-history.active {
-  display: block;
-  padding: 8px 0;
-  max-height: 120px;
-  overflow-y: auto;
-}
-
-#history-list {
-  list-style: none;
-}
-
-#history-list li {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 20px;
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-#history-list li .hist-result {
-  color: var(--text-primary);
-  font-weight: 400;
-}
-
-/* ── Grade de botões ────────────────────────────────────────
-   feat/botoes-teclado: personalize esta seção             */
+/* ── Grade de botões ─────────────────────────────────────
+   IMPORTANTE: valores fixos em px (não usar var() aqui)
+   feat/botoes-teclado: personalize esta seção           */
 .calc-buttons {
   display: grid;
-  grid-template-columns: repeat(4, var(--btn-size));
-  gap: var(--gap);
+  grid-template-columns: 72px 72px 72px 72px;
+  gap: 10px;
   padding: 14px;
   justify-content: center;
 }
 
-/* ── Botões base ──────────────────────────────────────────── */
+/* ── Botões ──────────────────────────────────────────────── */
 .btn {
-  width: var(--btn-size);
-  height: var(--btn-size);
+  width: 72px;
+  height: 72px;
   border: none;
-  border-radius: var(--radius-btn);
+  border-radius: 50%;
   cursor: pointer;
   font-size: 26px;
   font-weight: 400;
@@ -151,96 +116,66 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity var(--transition), transform var(--transition);
+  position: relative;
+  overflow: hidden;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  transition: opacity 80ms ease, transform 80ms ease;
 }
 
-.btn:active {
-  opacity: 0.7;
-  transform: scale(0.96);
-}
+.btn:active { opacity: 0.7; transform: scale(0.96); }
 
-/* Tipos */
-.btn-num {
-  background: var(--bg-num);
-  color: var(--text-primary);
-}
+.btn-num { background: var(--bg-num); color: var(--text-primary); }
 .btn-num:hover { background: var(--bg-num-hover); }
 
-.btn-fn {
-  background: var(--bg-fn);
-  color: var(--text-primary);
-}
+.btn-fn  { background: var(--bg-fn);  color: var(--text-primary); }
 .btn-fn:hover { background: var(--bg-fn-hover); }
 
-.btn-op {
-  background: var(--bg-op);
-  color: var(--text-op);
-  font-weight: 500;
-}
+.btn-op  { background: var(--bg-op);  color: var(--text-op); font-weight: 500; }
 .btn-op:hover { background: var(--bg-op-hover); }
 
-/* Estado ativo do operador */
-.btn-op.op-active {
-  background: var(--text-primary);
-  color: var(--bg-op);
-}
+/* Operador ativo */
+.btn-op.op-active { background: var(--text-primary); color: var(--bg-op); }
 
-/* Zero ocupa 2 colunas (pill) */
+/* Zero — pill horizontal, 2 colunas */
 .btn-zero {
-  width: calc(var(--btn-size) * 2 + var(--gap));
+  width: 154px;
   border-radius: 36px;
   justify-content: flex-start;
   padding-left: 26px;
   grid-column: span 2;
 }
 
-/* ── Tema claro (feat/tema-escuro) ──────────────────────────
-   feat/tema-escuro: adicione a lógica de toggle aqui     */
+/* ── Tema claro (feat/tema-escuro) ──────────────────────── */
 body.light-mode {
-  --bg-page:      #f2f2f7;
-  --bg-calc:      #ffffff;
-  --bg-num:       #e5e5ea;
-  --bg-fn:        #aaaaae;
-  --bg-op:        #ff9f0a;
-  --text-primary: #1c1c1e;
-  --text-secondary: #636366;
-  --text-op:      #ffffff;
-  --display-bg:   #ffffff;
+  --bg-page:       #f2f2f7;
+  --bg-calc:       #ffffff;
+  --bg-num:        #e5e5ea;
+  --bg-fn:         #aaaaae;
+  --text-primary:  #1c1c1e;
+  --text-secondary:#636366;
+  --text-op:       #ffffff;
   --border-subtle: rgba(0,0,0,0.08);
-  --bg-num-hover: #d8d8dc;
-  --bg-fn-hover:  #9a9a9e;
-  --bg-op-hover:  #ffb340;
+  --bg-num-hover:  #d8d8dc;
+  --bg-fn-hover:   #9a9a9e;
+  --bg-op-hover:   #ffb340;
 }
 
-/* ── Feedback de erro (feat/feedback-erro) ─────────────────
-   feat/feedback-erro: personalize esta seção             */
-.calc.has-error .calc-display {
-  animation: shake 0.3s ease;
-}
-
+/* ── Feedback de erro (feat/feedback-erro) ──────────────── */
+.calc.has-error .calc-display { animation: shake 0.3s ease; }
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25%       { transform: translateX(-6px); }
-  75%       { transform: translateX(6px); }
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-6px); }
+  75%     { transform: translateX(6px); }
 }
 
-/* ── Animação de botões (feat/animacao-botoes) ─────────────
-   feat/animacao-botoes: personalize esta seção           */
-.btn {
-  position: relative;
-  overflow: hidden;
-}
+/* ── Animação de botões (feat/animacao-botoes) ──────────── */
 
-/* ── Responsivo (feat/responsivo-mobile) ───────────────────
-   feat/responsivo-mobile: personalize abaixo             */
+/* ── Responsivo (feat/responsivo-mobile) ────────────────── */
 @media (max-width: 380px) {
-  :root {
-    --btn-size: 60px;
-    --gap: 8px;
-  }
-  .calc { width: 270px; }
+  .calc { width: 272px; }
+  .calc-buttons { grid-template-columns: 60px 60px 60px 60px; gap: 8px; padding: 10px; }
+  .btn { width: 60px; height: 60px; font-size: 22px; }
+  .btn-zero { width: 128px; border-radius: 30px; }
   .calc-result { font-size: 42px; }
-  .calc-buttons { padding: 10px; }
 }
