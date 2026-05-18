@@ -1,7 +1,7 @@
 ## Feature implementada
 
-**Nome da feature:** `feat/` ou `test/` + descrição  
-**Frente:** [ ] UI  [ ] Lógica  [ ] Qualidade
+**Branch:** `feat/` ou `test/` ou `docs/` + nome  
+**Frente:** [ ] F1 — UI  [ ] F2 — Lógica  [ ] F3 — Qualidade
 
 ---
 
@@ -13,11 +13,11 @@
 
 ## Checklist
 
-- [ ] Branch segue o padrão: `feat/nome-da-feature` ou `test/nome-do-teste`
+- [ ] Branch segue o padrão (`feat/nome`, `test/nome`, `docs/nome`)
 - [ ] Commits usam Conventional Commits (`feat:`, `fix:`, `test:`, `docs:`)
-- [ ] Código funciona no navegador (Frente 1 e 2)
-- [ ] Testes passam: `npm test` (Frente 2 e 3)
-- [ ] Não alterei arquivos fora do escopo da minha feature
+- [ ] Editei apenas os arquivos do escopo da minha feature
+- [ ] `npm test` roda sem erros (Frente 2 e 3)
+- [ ] Não há `console.log` de debug esquecidos
 
 ---
 
@@ -29,6 +29,6 @@
 
 ---
 
-## Screenshot (Frente 1 — obrigatório)
+## Screenshot — obrigatório para Frente 1
 
-<!-- Cole aqui uma captura de tela do resultado visual -->
+<!-- Cole aqui uma imagem do resultado visual -->

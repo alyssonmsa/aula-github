@@ -4,9 +4,13 @@
   "description": "Lab prático de Git e GitHub — Engenharia e Qualidade de Software",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
     "jest": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

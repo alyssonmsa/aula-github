@@ -1,75 +1,77 @@
-# 🧮 Calculadora — Lab GitHub
+# Calculadora — Lab GitHub
 
-> Lab prático de Git, GitHub e Pull Requests  
+> Lab prático · Git, GitHub e Pull Requests  
 > Engenharia e Qualidade de Software
 
-## Como participar
+## Como rodar
 
-1. **Fork** este repositório
-2. **Clone** o seu fork localmente
-3. Escolha sua feature na lista abaixo
-4. Crie a branch: `git checkout -b feat/nome-da-feature`
-5. Implemente, teste e abra o **Pull Request** neste repositório
+Abra `index.html` diretamente no navegador — **não precisa de npm**.
 
-## Estrutura do projeto
-
-```
-calculadora-lab/
-├── index.html              ← Interface principal
-├── src/
-│   ├── calculadora.js      ← Lógica pura (Frente 2)
-│   ├── app.js              ← Integração UI ↔ Lógica
-│   └── style.css           ← Estilos base (Frente 1)
-├── tests/
-│   └── calculadora.test.js ← Testes unitários (Frente 3)
-├── package.json
-└── .github/
-    └── PULL_REQUEST_TEMPLATE.md
-```
-
-## Rodando o projeto
+O npm é necessário apenas para rodar os testes Jest (Frente 2 e 3):
 
 ```bash
 npm install
 npm test
 ```
 
-## Features disponíveis
-
-> Cada aluno pega **uma** feature. Veja o enunciado completo no Google Classroom.
-
-### 🎨 Frente 1 — UI e Interface
-- `feat/display-visor` — Visor com expressão e resultado
-- `feat/botoes-teclado` — Grade de botões numéricos e operadores
-- `feat/tema-escuro` — Alternância dark/light mode
-- `feat/historico-lista` — Lista dos últimos cálculos
-- `feat/responsivo-mobile` — Layout responsivo para celular
-- `feat/animacao-botoes` — Animação de clique nos botões
-- `feat/feedback-erro` — Mensagem visual de erro
-
-### ⚙️ Frente 2 — Lógica JS
-- `feat/operacao-soma` — Função soma com teste básico
-- `feat/operacao-subtracao` — Função subtração com teste básico
-- `feat/operacao-multiplicacao` — Função multiplicação com teste básico
-- `feat/operacao-divisao` — Função divisão com teste básico
-- `feat/porcentagem` — Função porcentagem com teste básico
-- `feat/inverter-sinal` — Função inverter sinal (+/-) com teste básico
-- `feat/limpar-ce-c` — Funções C (limpar tudo) e CE (limpar entrada)
-
-### 🧪 Frente 3 — Qualidade e Testes
-- `test/soma-e-subtracao` — Suite completa de testes: soma e subtração
-- `test/multi-e-divisao` — Suite completa: multiplicação e divisão
-- `test/divisao-por-zero` — Testes de borda: divisão por zero
-- `test/porcentagem-sinal` — Testes: porcentagem e inverter sinal
-- `test/casos-extremos` — Testes: decimais, números grandes, NaN
-- `test/historico-calcs` — Testes: histórico de operações
-- `docs/readme-e-setup` — Documentação completa do projeto
-
-## Padrão de commits obrigatório
+## Estrutura
 
 ```
-feat: adiciona função de soma
-test: implementa testes de divisão por zero
-fix: corrige cálculo de porcentagem
+calculadora-lab/
+├── index.html              ← Interface pronta
+├── src/
+│   ├── calculadora.js      ← Funções com TODO (Frente 2)
+│   ├── app.js              ← Integração UI ↔ Lógica (não edite)
+│   └── style.css           ← Estilos base + hooks para Frente 1
+├── tests/
+│   └── calculadora.test.js ← test.todo() (Frente 3)
+└── .github/
+    └── PULL_REQUEST_TEMPLATE.md
+```
+
+## Features disponíveis
+
+Cada aluno escolhe **uma** feature. Veja o enunciado completo no Classroom.
+
+### F1 — UI e Interface
+| Branch | Feature |
+|--------|---------|
+| `feat/display-visor` | Estilizar o visor com expressão e resultado |
+| `feat/botoes-teclado` | Estilizar e personalizar a grade de botões |
+| `feat/tema-escuro` | Toggle dark/light mode |
+| `feat/historico-lista` | Painel de histórico dos últimos 5 cálculos |
+| `feat/responsivo-mobile` | Layout responsivo a partir de 320px |
+| `feat/animacao-botoes` | Efeito de clique e ripple nos botões |
+| `feat/feedback-erro` | Mensagem visual para erros de cálculo |
+
+### F2 — Lógica JavaScript
+| Branch | Feature |
+|--------|---------|
+| `feat/operacao-soma` | `Calculadora.soma(a, b)` |
+| `feat/operacao-subtracao` | `Calculadora.subtracao(a, b)` |
+| `feat/operacao-multiplicacao` | `Calculadora.multiplicacao(a, b)` |
+| `feat/operacao-divisao` | `Calculadora.divisao(a, b)` — tratar divisão por zero |
+| `feat/porcentagem` | `Calculadora.porcentagem(a)` |
+| `feat/inverter-sinal` | `Calculadora.inverterSinal(a)` |
+| `feat/limpar-ce-c` | `Calculadora.limpar()` e `Calculadora.limparEntrada()` |
+
+### F3 — Qualidade e Testes
+| Branch | Feature |
+|--------|---------|
+| `test/soma-e-subtracao` | Suite completa: soma e subtração |
+| `test/multi-e-divisao` | Suite completa: multiplicação e divisão |
+| `test/divisao-por-zero` | Testes de borda: divisão por zero |
+| `test/porcentagem-sinal` | Testes: porcentagem e inverterSinal |
+| `test/casos-extremos` | Testes: decimais, grandes, NaN |
+| `test/historico-calcs` | Testes: histórico de cálculos |
+| `docs/readme-e-setup` | Documentação completa com badges |
+
+## Padrão de commits
+
+```
+feat: implementa função de soma
+test: adiciona testes de divisão por zero
+fix: corrige cálculo de porcentagem negativa
 docs: atualiza README com instruções de setup
+style: ajusta espaçamento dos botões
 ```
