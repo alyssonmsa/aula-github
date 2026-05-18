@@ -20,8 +20,8 @@ const Calculadora = {
    * @returns {number}
    */
   soma: function(a, b) {
-    throw new Error('Não implementado: feat/operacao-soma');
-  },
+        return a + b;
+},
 
   /**
    * feat/operacao-subtracao
