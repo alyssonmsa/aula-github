@@ -42,7 +42,7 @@ const Calculadora = {
    * @returns {number}
    */
   multiplicacao: function(a, b) {
-    throw new Error('Não implementado: feat/operacao-multiplicacao');
+    return a * b;
   },
 
   /**
